@@ -17,4 +17,7 @@ Các thư viện cần cài đặt
 - redux - react-redux
 - antd
 - tailwindcss
-- sass
+- sass - sass-loader
+
+// link truy cập swagger lấy api
+https://movienew.cybersoft.edu.vn/swagger/index.html

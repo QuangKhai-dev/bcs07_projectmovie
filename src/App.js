@@ -1,9 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import UserTemplate from './template/UserTemplate';
+import HomePage from './pages/HomePage/HomePage';
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>{/*  */}</Routes>
+      <Routes>
+        <Route path="/" element={<UserTemplate />}>
+          <Route path="/home" element={<HomePage />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }
