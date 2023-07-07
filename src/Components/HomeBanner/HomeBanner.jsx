@@ -25,15 +25,6 @@ const HomeBanner = () => {
     getAllBanner();
   }, []);
 
-  const arr1 = [
-    { name: 'a', id: 1 },
-    { name: 'b', id: 2 },
-  ];
-  const arr2 = arr1.map((item, index) => {
-    const { name, ...newObj } = item;
-    return { ...newObj, title: name };
-  });
-
   return (
     <Carousel>
       {banner.map((banner, index) => {
