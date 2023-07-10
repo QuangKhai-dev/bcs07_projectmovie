@@ -18,6 +18,10 @@ Các thư viện cần cài đặt
 - antd
 - tailwindcss
 - sass - sass-loader
+- react-lottie
+- moment
 
 // link truy cập swagger lấy api
 https://movienew.cybersoft.edu.vn/swagger/index.html
+
+trang đăng nhập, trang detail, với dashboard admin
