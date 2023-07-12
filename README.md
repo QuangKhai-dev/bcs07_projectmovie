@@ -20,6 +20,7 @@ Các thư viện cần cài đặt
 - sass - sass-loader
 - react-lottie
 - moment
+- formik - quản lí form
 
 // link truy cập swagger lấy api
 https://movienew.cybersoft.edu.vn/swagger/index.html

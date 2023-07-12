@@ -1,6 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
+  const { hoTen } = useSelector((state) => state.nguoiDung); // ở đây có thể hiểu khúc useSelector giúp truy cập tới initialState của Slice nguoiDung nên có thể dùng bóc tách phần tử để bóc ra thuộc tính hoTen
+  console.log(hoTen);
   return (
     <nav className="bg-white dark:bg-gray-900 w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -15,12 +19,20 @@ const Header = () => {
           </span>
         </a>
         <div className="flex md:order-2">
-          <button
-            type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Get started
-          </button>
+          <div>
+            {hoTen != null ? (
+              <p className="text-white">{hoTen.hoTen}</p>
+            ) : (
+              <>
+                <NavLink to="/login" className="text-white text-xl">
+                  <i className="fa-solid fa-circle-user mr-2"></i> Đăng nhập
+                </NavLink>
+                <NavLink to="/" className="text-white text-xl ml-4">
+                  <i className="fa-solid fa-circle-user mr-2"></i> Đăng ký
+                </NavLink>
+              </>
+            )}
+          </div>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
