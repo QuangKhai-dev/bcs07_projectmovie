@@ -17,7 +17,7 @@ const HomeBanner = () => {
   const [banner, setBanner] = useState([]);
   const getAllBanner = async () => {
     const res = await movieServ.getAllBanner();
-    console.log(res);
+    // console.log(res);
     setBanner(res.data.content);
   };
 

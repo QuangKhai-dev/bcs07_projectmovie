@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   const { hoTen } = useSelector((state) => state.nguoiDung); // ở đây có thể hiểu khúc useSelector giúp truy cập tới initialState của Slice nguoiDung nên có thể dùng bóc tách phần tử để bóc ra thuộc tính hoTen
-  console.log(hoTen);
   return (
     <nav className="bg-white dark:bg-gray-900 w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">

@@ -6,6 +6,7 @@ import {
 } from '@ant-design/icons';
 import { Layout, Menu, Button, theme } from 'antd';
 import { NavLink, Outlet } from 'react-router-dom';
+import { layDuLieuLocal } from '../utils/localStore';
 const { Header, Sider, Content } = Layout;
 
 const AdminTemplate = () => {
@@ -13,6 +14,22 @@ const AdminTemplate = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+  // khi người dùng kp quản trị vào sẽ đá về trang chủ hoặc bất kì trang nào mình muốn
+  useEffect(() => {
+    // gọi dữ liệu từ local lên
+    const user = layDuLieuLocal('user');
+    // một là không có dữ liệu
+    // hai là lấy lên mà mã loại khách hàng không phải là quản trị
+    if (user) {
+      console.log(user);
+      if (user.maLoaiNguoiDung != 'QuanTri') {
+        window.location.href = 'https://www.google.com';
+      }
+    } else {
+      window.location.href = 'https://www.google.com';
+    }
+  }, []);
 
   return (
     <Layout className="min-h-screen">

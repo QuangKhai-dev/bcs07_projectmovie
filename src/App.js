@@ -20,6 +20,7 @@ function App() {
         </Route>
         <Route path="/admin-login" element={<LoginAdmin />} />
         <Route path="*" element={<Page404 />} />
+        {/* <Route path="/loading" element={<Loading />} /> */}
       </Routes>
     </BrowserRouter>
   );

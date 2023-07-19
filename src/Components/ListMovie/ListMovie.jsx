@@ -3,19 +3,26 @@ import { movieServ } from '../../services/movieServices';
 import './listmovie.scss';
 import { NavLink } from 'react-router-dom';
 import { Button } from 'antd';
+import { useDispatch } from 'react-redux';
+import {
+  set_loading_ended,
+  set_loading_started,
+} from '../../redux/slices/loadingSlice';
 
 const ListMovie = () => {
   const [movies, setMovies] = useState([]);
-
+  const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(set_loading_started());
     movieServ
       .getAllMovie()
       .then((result) => {
-        console.log(result);
         setMovies(result.data.content);
+        dispatch(set_loading_ended());
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
+        dispatch(set_loading_ended());
       });
   }, []);
 
