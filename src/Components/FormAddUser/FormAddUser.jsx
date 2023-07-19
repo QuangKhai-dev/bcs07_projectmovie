@@ -18,9 +18,9 @@ const FormAddUser = () => {
     },
     onSubmit: async (values) => {
       try {
-        console.log(values);
+        // console.log(values);
         const res = await nguoiDungServ.addUser({ ...values });
-        console.log(res);
+        // console.log(res);
         dispatch(getAllUser());
       } catch (error) {
         console.log(error);
